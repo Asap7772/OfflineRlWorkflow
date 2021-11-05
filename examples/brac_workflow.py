@@ -33,8 +33,18 @@ def process_buffer(args):
 
     if args.buffer == 0:
         path = p_data_path
-        ba('buffer1.npy', y='zero') 
-        ba('buffer2.npy')
+        ba('closed_drawer_prior.npy',y='zero')
+        ba('drawer_task.npy')
+    elif args.buffer == 1:
+        path = p_data_path
+        ba('blocked_drawer_1_prior.npy',y='zero')
+        ba('drawer_task.npy')
+    elif args.buffer == 2:
+        path = p_data_path
+        ba('blocked_drawer_2_prior.npy',y='zero')
+        ba('drawer_task.npy')
+    else:
+        assert False, "Invalid Buffer"
 
     return buffers
 
